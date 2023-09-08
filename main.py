@@ -10,66 +10,55 @@ import os
 
 # Configure Cloudinary with your credentials
 cloudinary.config(
-    cloud_name="dvuowbmrz",
-    api_key="177664162661619",
-    api_secret="qVMYel17N_C5QUUUuBIuatB5tq0"
+    cloud_name="*******",
+    api_key="*********",
+    api_secret="**********"
 )
-#
-# # Set up OAuth2 client details
-# CLIENT_SECRET_FILE = 'client_secret.json'
-# SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']  # Adjust scopes as needed
-#
-# # Set up Streamlit app
-# #st.title("Google Authentication Demo")
-#
-# # Check if the user is authenticated
-# if 'credentials' not in st.session_state:
-#     #st.write("WELCOME")
-#     flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_FILE, SCOPES)
-#     credentials = flow.run_local_server(port=8501, authorization_prompt_message='')
-#
-#     # Save credentials to a file for future use (optional)
-#     with open('token.json', 'w') as token_file:
-#         token_file.write(credentials.to_json())
-#
-#     st.session_state.credentials = credentials
-#     st.success("Authentication successful. You can now use the app.")
-#
-# # Use authenticated credentials to interact with Google API
-# credentials = st.session_state.credentials
-# service = build('drive', 'v3', credentials=credentials)
-#
-# # Fetch user's name from Google API
-# try:
-#     user_info = service.about().get(fields="user").execute()
-#     user_name = user_info["user"]["displayName"]
-#     #st.header("Google Profile Information")
-#     st.markdown(f"<p style='font-size: 24px;'><strong>Userame: {user_name.upper()}</strong></p>", unsafe_allow_html=True)
-# except Exception as e:
-#     st.error(f"Error fetching user profile: {str(e)}")
-#
-# # Your app's functionality goes here
-# # # Display Google Drive contents
-# # st.header("Google Drive Contents")
-# # results = service.files().list(pageSize=10).execute()
-# # files = results.get('files', [])
-# # if not files:
-# #     st.write('No files found in Google Drive.')
-# # else:
-# #     st.write('Files in Google Drive:')
-# #     for file in files:
-# #         st.write(f"- {file['name']} ({file['mimeType']})")
-#
-# # Logout button
-# if st.button("Logout"):
-#     del st.session_state.credentials
-#     os.remove("token_dir/token.json")  # Remove the token file
-#
+
+# Set up OAuth2 client details
+CLIENT_SECRET_FILE = 'client_secret.json'
+SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']  # Adjust scopes as needed
+
+# Set up Streamlit app
+#st.title("Google Authentication Demo")
+
+# Check if the user is authenticated
+if 'credentials' not in st.session_state:
+    #st.write("WELCOME")
+    flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_FILE, SCOPES)
+    credentials = flow.run_local_server(port=8501, authorization_prompt_message='')
+
+    # Save credentials to a file for future use (optional)
+    with open('token.json', 'w') as token_file:
+        token_file.write(credentials.to_json())
+
+    st.session_state.credentials = credentials
+    st.success("Authentication successful. You can now use the app.")
+
+# Use authenticated credentials to interact with Google API
+credentials = st.session_state.credentials
+service = build('drive', 'v3', credentials=credentials)
+
+# Fetch user's name from Google API
+try:
+    user_info = service.about().get(fields="user").execute()
+    user_name = user_info["user"]["displayName"]
+    #st.header("Google Profile Information")
+    st.markdown(f"<p style='font-size: 24px;'><strong>Userame: {user_name.upper()}</strong></p>", unsafe_allow_html=True)
+except Exception as e:
+    st.error(f"Error fetching user profile: {str(e)}")
+
+
+# Logout button
+if st.button("Logout"):
+    del st.session_state.credentials
+    os.remove("token_dir/token.json")  # Remove the token file
+
 
 
 # Set up Hugging Face API endpoint
 API_URL = "https://api-inference.huggingface.co/models/CompVis/stable-diffusion-v1-4"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer **********************"}
 
 
 def query_model_with_image(image_description):
