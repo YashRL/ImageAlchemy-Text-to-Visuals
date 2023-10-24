@@ -6,3 +6,6 @@ pytz
 google-auth-oauthlib
 google-auth-httplib2
 google-api-python-client
+ipython
+torch
+git+https://github.com/openai/glide-text2im
