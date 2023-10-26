@@ -1,5 +1,5 @@
-# Heart-Desease-model
-Project Overview: Text to Image Generation
+# Project Overview: Text to Image Generation
+
 
 1. Model Development
 
