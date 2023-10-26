@@ -1,7 +1,7 @@
 # Project Overview: Text to Image Generation
 
 
-1. Model Development
+1. Model Development <br>
 Deep Learning: Utilized deep neural networks to develop a Text to Image Generation model, enabling the conversion of textual descriptions into images.
 
 Diffusion: Employed statistical diffusion processes for incremental image refinement, contributing to higher image quality.
