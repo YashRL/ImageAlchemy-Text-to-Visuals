@@ -32,4 +32,4 @@
 ## 8. Takeaways- <br>
 The project showcased the potential for AI to bridge the gap between language and visual artistry, opening doors to new and innovative applications.<br>
 The experience reinforced the value of incorporating advanced deep learning techniques and optimization strategies for real-world projects.<br>
-This project serves as a testament to the exciting future of AI, where technology not only complements human creativity but also fuels it.<br>
+This project serves as a testament to the exciting future of AI, where technology not only complements human creativity but also fuels.<br>
